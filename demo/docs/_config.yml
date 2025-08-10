@@ -1,17 +1,15 @@
 name: Quadrupedal Robot Skateboarding
 description: Research project on dynamic balance control for quadrupedal robots performing skateboarding maneuvers
-baseurl: "/quadrupedal-skateboarding"
+baseurl: "/skateboardingrobot"
 url: "https://thexuanphuc.github.io"
 
 # Build settings
 markdown: kramdown
 highlighter: rouge
-theme: minima
 
 # Plugins
 plugins:
   - jekyll-feed
-  - jekyll-sitemap
   - jekyll-seo-tag
 
 # SEO settings

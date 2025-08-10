@@ -39,7 +39,7 @@ This site is configured to be deployed automatically via GitHub Pages. Simply:
 1. Push the `docs` folder to your GitHub repository
 2. Enable GitHub Pages in your repository settings
 3. Select "Deploy from a branch" and choose the `main` branch with `/docs` folder
-4. Your site will be available at `https://username.github.io/repository-name`
+4. Your site will be available at `https://thexuanphuc.github.io/skateboardingrobot`
 
 ## Features
 
