@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadrupedal Robot Skateboarding</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        main {
+            margin-top: 80px;
+        }
+
+        .hero {
+            padding: 6rem 0;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #ff6b6b;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .section {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .demo-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .demo-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .demo-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .tech-item {
+            background: #667eea;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #667eea;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">🤖 QuadSkate</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#demos">Demos</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Quadrupedal Robot Skateboarding</h1>
+                <p>Pioneering research in dynamic balance control and sports robotics. Watch as our quadrupedal robot masters the art of skateboarding through advanced AI and control systems.</p>
+                <a href="#demos" class="btn">View Demonstrations</a>
+            </div>
+        </section>
+
+        <section id="research" class="section">
+            <div class="container">
+                <h2>Research Overview</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>🎯 Dynamic Balance</h3>
+                        <p>Novel control algorithms that enable quadrupedal robots to maintain stability on moving skateboard platforms, extending beyond traditional walking gaits.</p>
+                    </div>
+                    <div class="card">
+                        <h3>🧠 AI Learning</h3>
+                        <p>Reinforcement learning framework that teaches robots complex skateboarding maneuvers through progressive curriculum learning and reward shaping.</p>
+                    </div>
+                    <div class="card">
+                        <h3>🔄 Real-World Transfer</h3>
+                        <p>Successful simulation-to-reality transfer with robust performance across different surface conditions and environmental variations.</p>
+                    </div>
+                    <div class="card">
+                        <h3>⚡ Multi-Modal Control</h3>
+                        <p>Seamless transition between walking and skateboarding modes with hierarchical control architecture combining planning and execution.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="demos" class="section">
+            <div class="container">
+                <h2>Live Demonstrations</h2>
+                <div class="demo-grid">
+                    <div class="demo-item">
+                        <img src="../matplotlib_front.gif" alt="Front View Simulation">
+                        <h3>Simulation - Front View</h3>
+                        <p>Basic skateboarding locomotion showing forward motion and balance control</p>
+                    </div>
+                    <div class="demo-item">
+                        <img src="../matplotlib_iso.gif" alt="Isometric View Simulation">
+                        <h3>Simulation - Isometric View</h3>
+                        <p>Full body dynamics during skateboarding with detailed joint movements</p>
+                    </div>
+                    <div class="demo-item">
+                        <img src="../mounting.gif" alt="Mounting Behavior">
+                        <h3>Autonomous Mounting</h3>
+                        <p>Robot learns to mount the skateboard from various approach angles</p>
+                    </div>
+                    <div class="demo-item">
+                        <img src="../turning.gif" alt="Turning Maneuvers">
+                        <h3>Dynamic Turning</h3>
+                        <p>Advanced steering control through weight shifting and lean angles</p>
+                    </div>
+                    <div class="demo-item">
+                        <img src="../real_front.gif" alt="Real Robot Front">
+                        <h3>Real Robot - Front View</h3>
+                        <p>Physical robot demonstrating learned skateboarding behaviors</p>
+                    </div>
+                    <div class="demo-item">
+                        <img src="../real_iso.gif" alt="Real Robot Isometric">
+                        <h3>Real Robot - Isometric</h3>
+                        <p>Real-world validation of simulation-trained policies</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="results" class="section">
+            <div class="container">
+                <h2>Performance Results</h2>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">Balance Success Rate</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">45°</div>
+                        <div class="stat-label">Max Steering Angle</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2.5m/s</div>
+                        <div class="stat-label">Top Speed Achieved</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">DOF Control</div>
+                    </div>
+                </div>
+
+                <h3 style="text-align: center; margin-top: 3rem; margin-bottom: 2rem;">Technical Stack</h3>
+                <div class="tech-stack">
+                    <span class="tech-item">Python</span>
+                    <span class="tech-item">PyTorch</span>
+                    <span class="tech-item">MuJoCo</span>
+                    <span class="tech-item">OpenAI Gym</span>
+                    <span class="tech-item">ROS</span>
+                    <span class="tech-item">Reinforcement Learning</span>
+                    <span class="tech-item">Control Theory</span>
+                    <span class="tech-item">Computer Vision</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2>Key Contributions</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>📊 Novel Control Framework</h3>
+                        <p>First comprehensive approach to quadrupedal robot skateboarding with hierarchical control combining MPC trajectory planning and joint-space torque control.</p>
+                    </div>
+                    <div class="card">
+                        <h3>🎓 Learning Methodology</h3>
+                        <p>Progressive curriculum learning approach that systematically teaches complex skateboarding maneuvers from basic balance to advanced tricks.</p>
+                    </div>
+                    <div class="card">
+                        <h3>🔬 Scientific Validation</h3>
+                        <p>Extensive experimental validation in both simulation and real-world environments, demonstrating robust performance across conditions.</p>
+                    </div>
+                    <div class="card">
+                        <h3>🌐 Open Research</h3>
+                        <p>Complete open-source framework enabling reproducible research and further development in sports robotics applications.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <h2>Get Involved</h2>
+            <p>Interested in collaborating or learning more about our research?</p>
+            <div class="social-links">
+                <a href="https://github.com/username/quadrupedal-skateboarding">📁 GitHub</a>
+                <a href="mailto:research@institution.edu">📧 Email</a>
+                <a href="https://arxiv.org/abs/paper-id">📄 Paper</a>
+                <a href="https://www.youtube.com/watch?v=demo">🎥 YouTube</a>
+            </div>
+            <p style="margin-top: 2rem; opacity: 0.7;">© 2024 Quadrupedal Skateboarding Research. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and demo items
+        document.querySelectorAll('.card, .demo-item, .stat-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

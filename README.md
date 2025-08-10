@@ -1,40 +1,64 @@
-tba
+# Quadrupedal Robot Skateboarding - Project Website
 
-# 🛹 Quadrupedal Skateboarding
+This folder contains the GitHub Pages website for the Quadrupedal Robot Skateboarding research project.
 
-**Open repository for the paper "The robot goes skateboarding"**
+## Website Structure
 
-## Demonstrations
+- `index.html` - Main landing page with project overview and demos
+- `technical.html` - Technical details and implementation information
+- `publications.html` - Academic publications and research papers
+- `downloads.html` - Source code, datasets, and model downloads
+- `styles.css` - Shared CSS styling for all pages
+- `_config.yml` - Jekyll configuration for GitHub Pages
 
-### Propulsion: Simulation vs Reality
+## Local Development
 
-<table>
-  <tr>
-    <td align="center"><b>Simulation</b></td>
-    <td align="center"><b>Real Robot</b></td>
-  </tr>
-  <tr>
-    <td><img src="demo/matplotlib_front.gif" width="300"/></td>
-    <td><img src="demo/real_front.gif" width="300"/></td>
-  </tr>
-  <tr>
-    <td><img src="demo/matplotlib_iso.gif" width="300"/></td>
-    <td><img src="demo/real_iso.gif" width="300"/></td>
-  </tr>
-</table>
+To run the website locally:
 
-### Steering Control
-<p align="center">
-  <img src="demo/turning.gif" width="400"/>
-</p>
+1. Install Jekyll:
+   ```bash
+   gem install bundler jekyll
+   ```
 
-### Skateboard Mounting
-<p align="center">
-  <img src="demo/mounting.gif" width="400"/>
-</p>
+2. Navigate to the docs folder:
+   ```bash
+   cd docs
+   ```
 
-*Related work: [Quadruped Skateboard Mounting](https://github.com/dancher00/quadruped-skateboard-mounting) | [arXiv Paper](https://www.arxiv.org/abs/2505.06561)*
+3. Serve the site:
+   ```bash
+   jekyll serve
+   ```
 
-## License
+4. Open `http://localhost:4000` in your browser
 
-This project is licensed under the terms specified in the [LICENSE](LICENSE) file.
+## GitHub Pages Deployment
+
+This site is configured to be deployed automatically via GitHub Pages. Simply:
+
+1. Push the `docs` folder to your GitHub repository
+2. Enable GitHub Pages in your repository settings
+3. Select "Deploy from a branch" and choose the `main` branch with `/docs` folder
+4. Your site will be available at `https://thexuanphuc.github.io/skateboardingrobot`
+
+## Features
+
+- **Responsive Design**: Works on desktop, tablet, and mobile devices
+- **Interactive Demos**: Embedded GIF demonstrations of robot skateboarding
+- **Technical Documentation**: Detailed implementation and methodology
+- **Publication List**: Academic papers and research contributions
+- **Download Center**: Easy access to code, models, and datasets
+
+## Customization
+
+To customize the website for your research:
+
+1. Update the content in each HTML file
+2. Replace demo GIFs with your own experimental results
+3. Update links to your GitHub repository, papers, and datasets
+4. Modify the color scheme and styling in `styles.css`
+5. Update contact information and social media links
+
+## Contact
+
+For questions about the website or research project, please contact the research team.

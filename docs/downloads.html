@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downloads - Quadrupedal Robot Skateboarding</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo"><a href="index.html">🤖 QuadSkate</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="technical.html">Technical</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="downloads.html">Downloads</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-small">
+            <div class="container">
+                <h1>Downloads & Resources</h1>
+                <p>Access code, datasets, models, and documentation</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2>Source Code & Software</h2>
+                
+                <div class="download-grid">
+                    <div class="download-item">
+                        <h3>🔧 Complete Framework</h3>
+                        <p>Full source code including simulation environment, training scripts, and robot interface.</p>
+                        <a href="https://github.com/username/quadrupedal-skateboarding" class="download-btn">GitHub Repository</a>
+                    </div>
+                    
+                    <div class="download-item">
+                        <h3>🐳 Docker Container</h3>
+                        <p>Pre-configured Docker environment with all dependencies for easy setup and reproducibility.</p>
+                        <a href="#" class="download-btn">Docker Hub</a>
+                    </div>
+                    
+                    <div class="download-item">
+                        <h3>📦 Python Package</h3>
+                        <p>Install via pip for easy integration into existing robotics workflows.</p>
+                        <a href="#" class="download-btn">PyPI Package</a>
+                    </div>
+                </div>
+
+                <h2>Pre-trained Models</h2>
+                
+                <div class="download-grid">
+                    <div class="download-item">
+                        <h3>🧠 Skateboarding Policy</h3>
+                        <p>Pre-trained reinforcement learning policy for basic skateboarding locomotion.</p>
+                        <a href="#" class="download-btn">Download Model</a>
+                    </div>
+                    
+                    <div class="download-item">
+                        <h3>🎯 Advanced Maneuvers</h3>
+                        <p>Specialized policies for turning, acceleration, and complex skateboarding tricks.</p>
+                        <a href="#" class="download-btn">Download Models</a>
+                    </div>
+                    
+                    <div class="download-item">
+                        <h3>⚡ Real Robot Weights</h3>
+                        <p>Fine-tuned model weights specifically optimized for real-world deployment.</p>
+                        <a href="#" class="download-btn">Download Weights</a>
+                    </div>
+                </div>
+
+                <h2>Datasets</h2>
+                
+                <div class="download-grid">
+                    <div class="download-item">
+                        <h3>📊 QuadSkate-1M Dataset</h3>
+                        <p>Large-scale dataset with 1M+ timesteps of skateboarding data from simulation and real robot.</p>
+                        <a href="#" class="download-btn">Download Dataset</a>
+                    </div>
+                    
+                    <div class="download-item">
+                        <h3>🎥 Video Demonstrations</h3>
+                        <p>High-quality video recordings of skateboarding experiments and demonstrations.</p>
+                        <a href="#" class="download-btn">Download Videos</a>
+                    </div>
+                    
+                    <div class="download-item">
+                        <h3>📈 Experimental Data</h3>
+                        <p>Raw experimental data, logs, and performance metrics from all conducted experiments.</p>
+                        <a href="#" class="download-btn">Download Data</a>
+                    </div>
+                </div>
+
+                <h2>Documentation & Tutorials</h2>
+                
+                <div class="download-grid">
+                    <div class="download-item">
+                        <h3>📚 User Manual</h3>
+                        <p>Comprehensive guide covering installation, usage, and customization of the framework.</p>
+                        <a href="#" class="download-btn">Download PDF</a>
+                    </div>
+                    
+                    <div class="download-item">
+                        <h3>🎓 Tutorials</h3>
+                        <p>Step-by-step tutorials for beginners and advanced users, including Jupyter notebooks.</p>
+                        <a href="#" class="download-btn">Download Tutorials</a>
+                    </div>
+                    
+                    <div class="download-item">
+                        <h3>🔧 API Documentation</h3>
+                        <p>Complete API reference and developer documentation for extending the framework.</p>
+                        <a href="#" class="download-btn">View Docs</a>
+                    </div>
+                </div>
+
+                <h2>Simulation Assets</h2>
+                
+                <div class="download-grid">
+                    <div class="download-item">
+                        <h3>🎮 MuJoCo Models</h3>
+                        <p>3D models and physics definitions for robot, skateboard, and environment simulation.</p>
+                        <a href="#" class="download-btn">Download Models</a>
+                    </div>
+                    
+                    <div class="download-item">
+                        <h3>🏞️ Environments</h3>
+                        <p>Various skateboarding environments including parks, ramps, and obstacle courses.</p>
+                        <a href="#" class="download-btn">Download Environments</a>
+                    </div>
+                    
+                    <div class="download-item">
+                        <h3>🎨 Textures & Materials</h3>
+                        <p>High-quality textures and material definitions for realistic visual simulation.</p>
+                        <a href="#" class="download-btn">Download Assets</a>
+                    </div>
+                </div>
+
+                <h2>Quick Start</h2>
+                
+                <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; margin-top: 2rem;">
+                    <h3>Installation Instructions</h3>
+                    <pre style="background: #333; color: #fff; padding: 1rem; border-radius: 5px; overflow-x: auto;">
+# Clone the repository
+git clone https://github.com/username/quadrupedal-skateboarding.git
+cd quadrupedal-skateboarding
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Download pre-trained models
+python scripts/download_models.py
+
+# Run basic demo
+python demo_skateboarding.py
+                    </pre>
+                </div>
+
+                <h2>System Requirements</h2>
+                
+                <div style="background: white; padding: 2rem; border-radius: 10px; margin-top: 2rem; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                        <div>
+                            <h4 style="color: #667eea; margin-bottom: 1rem;">Minimum Requirements</h4>
+                            <ul style="list-style-type: none; padding-left: 0;">
+                                <li style="margin-bottom: 0.5rem;">• Python 3.8+</li>
+                                <li style="margin-bottom: 0.5rem;">• 8GB RAM</li>
+                                <li style="margin-bottom: 0.5rem;">• NVIDIA GPU (optional)</li>
+                                <li style="margin-bottom: 0.5rem;">• Ubuntu 18.04+ / macOS 10.15+ / Windows 10+</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: #667eea; margin-bottom: 1rem;">Recommended</h4>
+                            <ul style="list-style-type: none; padding-left: 0;">
+                                <li style="margin-bottom: 0.5rem;">• Python 3.9+</li>
+                                <li style="margin-bottom: 0.5rem;">• 16GB RAM</li>
+                                <li style="margin-bottom: 0.5rem;">• NVIDIA RTX GPU</li>
+                                <li style="margin-bottom: 0.5rem;">• Ubuntu 20.04+</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>License & Usage</h2>
+                
+                <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; margin-top: 2rem;">
+                    <p><strong>License:</strong> MIT License - Feel free to use, modify, and distribute for research and commercial purposes.</p>
+                    <p style="margin-top: 1rem;"><strong>Citation:</strong> If you use this work in your research, please cite our paper:</p>
+                    <pre style="background: #333; color: #fff; padding: 1rem; border-radius: 5px; overflow-x: auto; margin-top: 1rem;">
+@article{quadrupedal_skateboarding_2024,
+  title={Quadrupedal Robot Skateboarding: Learning Dynamic Balance and Locomotion},
+  author={Author Name and Co-author Name},
+  journal={International Conference on Robotics and Automation},
+  year={2024},
+  pages={1-8}
+}
+                    </pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Quadrupedal Skateboarding Research. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

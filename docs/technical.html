@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Details - Quadrupedal Robot Skateboarding</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo"><a href="index.html">🤖 QuadSkate</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="technical.html">Technical</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="downloads.html">Downloads</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-small">
+            <div class="container">
+                <h1>Technical Details</h1>
+                <p>Deep dive into the technical implementation and methodology</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2>System Architecture</h2>
+                
+                <div class="technical-grid">
+                    <div class="tech-section">
+                        <h3>Control Hierarchy</h3>
+                        <ul>
+                            <li><strong>High-Level Controller:</strong> Model Predictive Control (MPC) for trajectory planning</li>
+                            <li><strong>Mid-Level Controller:</strong> Whole-body controller for joint coordination</li>
+                            <li><strong>Low-Level Controller:</strong> Joint-space torque control with compliance</li>
+                            <li><strong>Safety Controller:</strong> Emergency stop and fall detection systems</li>
+                        </ul>
+                    </div>
+
+                    <div class="tech-section">
+                        <h3>Learning Framework</h3>
+                        <ul>
+                            <li><strong>Algorithm:</strong> Proximal Policy Optimization (PPO)</li>
+                            <li><strong>Network:</strong> Actor-Critic with attention mechanisms</li>
+                            <li><strong>Training:</strong> Progressive curriculum learning</li>
+                            <li><strong>Sim-to-Real:</strong> Domain randomization and adaptation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Mathematical Formulation</h3>
+                <div class="math-section">
+                    <h4>Dynamic Balance Equations</h4>
+                    <p>The system maintains balance by controlling the Center of Pressure (CoP):</p>
+                    <pre><code>
+CoP_x = (Σ F_i * x_i) / Σ F_i
+CoP_y = (Σ F_i * y_i) / Σ F_i
+
+where F_i are ground reaction forces at contact point i
+                    </code></pre>
+
+                    <h4>Reward Function</h4>
+                    <p>Multi-objective reward combining stability, progress, and efficiency:</p>
+                    <pre><code>
+R = w_1 * R_stability + w_2 * R_progress + w_3 * R_energy + w_4 * R_orientation
+
+R_stability = -||CoM - desired_CoM||²
+R_progress = v_forward * dt
+R_energy = -||τ||²
+R_orientation = -||θ - θ_desired||²
+                    </code></pre>
+                </div>
+
+                <h3>Hardware Specifications</h3>
+                <div class="hardware-specs">
+                    <div class="spec-item">
+                        <h4>Robot Platform</h4>
+                        <ul>
+                            <li>Unitree A1 Quadruped</li>
+                            <li>12 DOF (3 per leg)</li>
+                            <li>Weight: 12 kg</li>
+                            <li>Max torque: 33.5 Nm per joint</li>
+                        </ul>
+                    </div>
+                    <div class="spec-item">
+                        <h4>Skateboard Platform</h4>
+                        <ul>
+                            <li>Custom aluminum deck</li>
+                            <li>High-precision bearings</li>
+                            <li>Integrated force sensors</li>
+                            <li>Weight: 2.5 kg</li>
+                        </ul>
+                    </div>
+                    <div class="spec-item">
+                        <h4>Sensors</h4>
+                        <ul>
+                            <li>IMU: 1000 Hz sampling</li>
+                            <li>Joint encoders: 0.1° resolution</li>
+                            <li>Force sensors: 4x load cells</li>
+                            <li>Camera: Optional RGB-D</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2>Implementation Details</h2>
+                
+                <h3>Training Pipeline</h3>
+                <div class="pipeline-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Environment Setup</h4>
+                            <p>Custom MuJoCo simulation with physics-accurate skateboard dynamics</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Curriculum Learning</h4>
+                            <p>Progressive training from stationary balance to dynamic maneuvers</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Policy Training</h4>
+                            <p>PPO training with domain randomization for robustness</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Real-World Transfer</h4>
+                            <p>Deployment on physical robot with minimal fine-tuning</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Code Structure</h3>
+                <pre><code>
+quadrupedal-skateboarding/
+├── src/
+│   ├── envs/                    # Simulation environments
+│   ├── agents/                  # RL agents and policies  
+│   ├── controllers/             # Control algorithms
+│   ├── utils/                   # Utility functions
+│   └── real_robot/              # Real robot interface
+├── configs/                     # Configuration files
+├── scripts/                     # Training and evaluation scripts
+├── assets/                      # 3D models and textures
+└── docs/                        # Documentation
+                </code></pre>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Quadrupedal Skateboarding Research</p>
+        </div>
+    </footer>
+</body>
+</html>
