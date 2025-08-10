@@ -1,6 +1,19 @@
-# Quadrupedal Robot Skateboarding - Project Website
+# Quadrupedal Robot Skateboarding
 
-This folder contains the GitHub Pages website for the Quadrupedal Robot Skateboarding research project.
+This repository contains the research project and website for quadrupedal robot skateboarding, developed by the Artificial Intelligence in Dynamic Action (AIDA) research group at Skoltech, Russia.
+
+## Authors
+
+The authors are with Artificial Intelligence in Dynamic Action (AIDA) research group, Skoltech, Russia:
+- Danil Belov - danil.belov@skoltech.ru
+- Elizaveta Pestova - elizaveta.pestova@skoltech.ru  
+- Ilya Osokin - ilya.osokin@skoltech.ru
+- Xuan Nguyen - xuan.nguyen@skoltech.ru
+- Pavel Osinenko - p.osinenko@skoltech.ru (corresponding author)
+
+## Acknowledgments
+
+This work was not supported by any organization.
 
 ## Website Structure
 

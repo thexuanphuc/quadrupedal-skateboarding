@@ -215,6 +215,61 @@
             font-weight: 500;
         }
 
+        .authors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .author-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .author-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .author-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #667eea;
+        }
+
+        .author-card a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        .author-card a:hover {
+            color: #667eea;
+        }
+
+        .author-card small {
+            color: #888;
+            font-style: italic;
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        .acknowledgment {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .acknowledgment h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
         footer {
             background: #333;
             color: white;
@@ -263,6 +318,7 @@
                 <li><a href="#demos">Demos</a></li>
                 <li><a href="#research">Research</a></li>
                 <li><a href="#results">Results</a></li>
+                <li><a href="#authors">Authors</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -398,6 +454,40 @@
                 </div>
             </div>
         </section>
+
+        <section id="authors" class="section">
+            <div class="container">
+                <h2>Authors</h2>
+                <p>The authors are with Artificial Intelligence in Dynamic Action (AIDA) research group, Skoltech, Russia:</p>
+                <div class="authors-grid">
+                    <div class="author-card">
+                        <h4>Danil Belov</h4>
+                        <p><a href="mailto:danil.belov@skoltech.ru">danil.belov@skoltech.ru</a></p>
+                    </div>
+                    <div class="author-card">
+                        <h4>Elizaveta Pestova</h4>
+                        <p><a href="mailto:elizaveta.pestova@skoltech.ru">elizaveta.pestova@skoltech.ru</a></p>
+                    </div>
+                    <div class="author-card">
+                        <h4>Ilya Osokin</h4>
+                        <p><a href="mailto:ilya.osokin@skoltech.ru">ilya.osokin@skoltech.ru</a></p>
+                    </div>
+                    <div class="author-card">
+                        <h4>Xuan Nguyen</h4>
+                        <p><a href="mailto:xuan.nguyen@skoltech.ru">xuan.nguyen@skoltech.ru</a></p>
+                    </div>
+                    <div class="author-card">
+                        <h4>Pavel Osinenko</h4>
+                        <p><a href="mailto:p.osinenko@skoltech.ru">p.osinenko@skoltech.ru</a></p>
+                        <small>Corresponding Author</small>
+                    </div>
+                </div>
+                <div class="acknowledgment">
+                    <h3>Acknowledgments</h3>
+                    <p>This work was not supported by any organization.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer id="contact">
@@ -405,12 +495,12 @@
             <h2>Get Involved</h2>
             <p>Interested in collaborating or learning more about our research?</p>
             <div class="social-links">
-                <a href="https://github.com/username/quadrupedal-skateboarding">📁 GitHub</a>
-                <a href="mailto:research@institution.edu">📧 Email</a>
+                <a href="https://github.com/thexuanphuc/quadrupedal-skateboarding">📁 GitHub</a>
+                <a href="mailto:p.osinenko@skoltech.ru">📧 Email</a>
                 <a href="https://arxiv.org/abs/paper-id">📄 Paper</a>
                 <a href="https://www.youtube.com/watch?v=demo">🎥 YouTube</a>
             </div>
-            <p style="margin-top: 2rem; opacity: 0.7;">© 2024 Quadrupedal Skateboarding Research. All rights reserved.</p>
+            <p style="margin-top: 2rem; opacity: 0.7;">© 2025 AIDA Research Group, Skoltech. All rights reserved.</p>
         </div>
     </footer>
 
@@ -451,7 +541,7 @@
         }, observerOptions);
 
         // Observe all cards and demo items
-        document.querySelectorAll('.card, .demo-item, .stat-item').forEach(el => {
+        document.querySelectorAll('.card, .demo-item, .stat-item, .author-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
