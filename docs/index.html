@@ -332,13 +332,12 @@
                 <a href="#demos" class="btn">View Demonstrations</a>
             </div>
         </section>
-
-        <section id="research" class="section">
+        <section id="research" class="section"></section>
             <div class="container">
                 <h2>Methodology</h2>
-                <div class="grid">
+                <div class="grid" style="grid-template-columns: repeat(2, 1fr); gap: 2rem;">
                     <div class="card">
-                        <h3>�🛠️ Hierarchical Control Architecture</h3>
+                        <h3>🛠️ Hierarchical Control Architecture</h3>
                         <p>The control system is organized into three layers: a global planner (ROS2 Nav2) generates obstacle-avoiding paths, a local planner (Stanley controller) adapts for skateboard kinematics, and low-level controllers execute steering and pushing via inverse kinematics and joint control. Real-time feedback enables robust adaptation to disturbances and trajectory deviations.</p>
                     </div>
                     <div class="card">
@@ -406,8 +405,8 @@
                 </div>
             </div>
             <div style="margin-top: 3rem; text-align: center;"></div>
-                <img src="demo/torque_over_time.png" alt="Torque Over Time" style="max-width: 600px; width: 100%; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                <p style="margin-top: 1rem; color: #667eea;">Joint torque profile during skateboarding maneuver</p>
+                <img src="demo/torque_over_time.png" alt="Torque Over Time" style="max-width: 600px; width: 100%; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: block; margin-left: auto; margin-right: auto;">
+                <p style="margin-top: 1rem; color: #667eea; text-align: center;">Joint torque profile during skateboarding maneuver</p>
             </div>
             </div>
         </section>

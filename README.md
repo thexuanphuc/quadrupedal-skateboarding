@@ -23,20 +23,25 @@ We use a hierarchical control system combining high-level planning, whole-body c
 
 ### Basic Skateboarding
 ![Front View](docs/demo/matplotlib_front.gif)
+
 *Front view demonstration of basic skateboarding locomotion*
 
 ![Isometric View](docs/demo/matplotlib_iso.gif)
+
 *Isometric view showing full body dynamics during skateboarding*
 
 ### Advanced Maneuvers
 ![Turning](docs/demo/turning.gif)
+
 *Dynamic turning maneuvers with balance control*
 
 ### Real Robot Performance
 ![Real Front View](docs/demo/real_front.gif)
+
 *Real robot performance - front view*
 
 ![Real Isometric View](docs/demo/real_iso.gif)
+
 *Real robot performance - isometric view*
 
 ## Citation
