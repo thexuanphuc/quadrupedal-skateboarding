@@ -23,67 +23,25 @@ We use a hierarchical control system combining high-level planning, whole-body c
 ## Demonstrations
 
 ### Basic Skateboarding
-![Front View](demo/matplotlib_front.gif)
+![Front View](src/demo/matplotlib_front.gif)
 *Front view demonstration of basic skateboarding locomotion*
 
-![Isometric View](demo/matplotlib_iso.gif)
+![Isometric View](src/demo/matplotlib_iso.gif)
 *Isometric view showing full body dynamics during skateboarding*
 
 ### Advanced Maneuvers
-![Mounting](demo/mounting.gif)
+![Mounting](src/demo/mounting.gif)
 *Autonomous mounting behavior from standing position*
 
-![Turning](demo/turning.gif)
+![Turning](src/demo/turning.gif)
 *Dynamic turning maneuvers with balance control*
 
 ### Real Robot Performance
-![Real Front View](demo/real_front.gif)
+![Real Front View](src/demo/real_front.gif)
 *Real robot performance - front view*
 
-![Real Isometric View](demo/real_iso.gif)
+![Real Isometric View](src/demo/real_iso.gif)
 *Real robot performance - isometric view*
-
-## Installation and Setup
-
-```bash
-# Clone the repository
-git clone https://github.com/thexuanphuc/quadrupedal-skateboarding.git
-cd quadrupedal-skateboarding
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run simulation
-python train_skateboarding.py
-
-# Deploy to real robot
-python deploy_real_robot.py
-```
-
-## Requirements
-
-- **Software**: Python 3.8+, PyTorch, MuJoCo, OpenAI Gym
-- **Hardware**: Quadrupedal robot (tested on Unitree A1), custom skateboard platform
-- **Sensors**: IMU, joint encoders, optional camera
-
-## Usage
-
-### Training
-```bash
-python scripts/train.py --config configs/skateboarding.yaml
-tensorboard --logdir logs/
-```
-
-### Evaluation
-```bash
-python scripts/evaluate.py --model checkpoints/best_model.pth
-python scripts/render_demos.py
-```
-
-### Real Robot Deployment
-```bash
-python scripts/deploy.py --robot_ip 192.168.1.100
-```
 
 ## Citation
 
