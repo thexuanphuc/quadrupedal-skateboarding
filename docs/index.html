@@ -335,46 +335,41 @@
 
         <section id="research" class="section">
             <div class="container">
-                <h2>Research Overview</h2>
+                <h2>Methodology</h2>
                 <div class="grid">
                     <div class="card">
-                        <h3>🎯 Dynamic Balance</h3>
-                        <p>Novel control algorithms that enable quadrupedal robots to maintain stability on moving skateboard platforms, extending beyond traditional walking gaits.</p>
+                        <h3>�🛠️ Hierarchical Control Architecture</h3>
+                        <p>The control system is organized into three layers: a global planner (ROS2 Nav2) generates obstacle-avoiding paths, a local planner (Stanley controller) adapts for skateboard kinematics, and low-level controllers execute steering and pushing via inverse kinematics and joint control. Real-time feedback enables robust adaptation to disturbances and trajectory deviations.</p>
                     </div>
                     <div class="card">
-                        <h3>🧠 AI Learning</h3>
-                        <p>Reinforcement learning framework that teaches robots complex skateboarding maneuvers through progressive curriculum learning and reward shaping.</p>
+                        <h3>Positioning for Push-Off</h3>
+                        <p>To prepare for push-off, the robot moves one leg near the skateboard and shifts its center of mass (CoM) laterally for balance. The swing leg follows a parabolic path, and the CoM shift keeps the robot stable as the leg is repositioned. Both leg and torso motions are mapped to joint angles via inverse kinematics for coordinated movement.</p>
+                        <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1rem;">
+                            <img src="demo/COM_shift_1.png" alt="CoM Shift Stage 1" style="width: 30%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                            <img src="demo/COM_shift_2.png" alt="CoM Shift Stage 2" style="width: 30%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                            <img src="demo/COM_shift_3.png" alt="CoM Shift Stage 3" style="width: 30%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                        </div>
                     </div>
                     <div class="card">
-                        <h3>🔄 Real-World Transfer</h3>
-                        <p>Successful simulation-to-reality transfer with robust performance across different surface conditions and environmental variations.</p>
+                        <h3>🚀 Velocity-Based Pushing Control</h3>
+                        <p>Forward motion is achieved by regulating leg speed during ground contact. The system adapts the leg trajectory based on velocity error, using feedback from foot sensors. Joint commands are smoothed and tracked by PD controllers for precise and stable motion.</p>
+                        <img src="demo/pushing_with_3_phase.png" alt="Pushing with 3 Phase" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-top: 1rem;">
                     </div>
                     <div class="card">
-                        <h3>⚡ Multi-Modal Control</h3>
-                        <p>Seamless transition between walking and skateboarding modes with hierarchical control architecture combining planning and execution.</p>
+                        <h3>🔄 Steering via CoM Shift</h3>
+                        <p>Turning is controlled by laterally shifting the robot's CoM, generating torque to steer the skateboard. The turning radius is directly related to CoM displacement, allowing smooth and accurate maneuvering through torque equilibrium and kinematic relationships.</p>
+                        <img src="demo/leaning.png" alt="Leaning for Steering" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-top: 1rem;">
                     </div>
                 </div>
             </div>
         </section>
-
         <section id="demos" class="section">
             <div class="container">
-                <h2>Live Demonstrations</h2>
-                <div class="demo-grid">
-                    <div class="demo-item">
-                        <img src="demo/matplotlib_front.gif" alt="Front View Simulation">
-                        <h3>Simulation - Front View</h3>
-                        <p>Basic skateboarding locomotion showing forward motion and balance control</p>
-                    </div>
+                <h2>Demonstrations</h2>
+                <div class="demo-grid" style="grid-template-columns: repeat(2, 1fr);">
                     <div class="demo-item">
                         <img src="demo/matplotlib_iso.gif" alt="Isometric View Simulation">
-                        <h3>Simulation - Isometric View</h3>
-                        <p>Full body dynamics during skateboarding with detailed joint movements</p>
-                    </div>
-                    <div class="demo-item">
-                        <img src="demo/mounting.gif" alt="Mounting Behavior">
-                        <h3>Autonomous Mounting</h3>
-                        <p>Robot learns to mount the skateboard from various approach angles</p>
+                        <h3>Simulation</h3>
                     </div>
                     <div class="demo-item">
                         <img src="demo/turning.gif" alt="Turning Maneuvers">
@@ -383,13 +378,11 @@
                     </div>
                     <div class="demo-item">
                         <img src="demo/real_front.gif" alt="Real Robot Front">
-                        <h3>Real Robot - Front View</h3>
-                        <p>Physical robot demonstrating learned skateboarding behaviors</p>
+                        <h3>Real Robot</h3>
                     </div>
                     <div class="demo-item">
                         <img src="demo/real_iso.gif" alt="Real Robot Isometric">
-                        <h3>Real Robot - Isometric</h3>
-                        <p>Real-world validation of simulation-trained policies</p>
+                        <h3>Real Robot</h3>
                     </div>
                 </div>
             </div>
@@ -397,40 +390,27 @@
 
         <section id="results" class="section">
             <div class="container">
-                <h2>Performance Results</h2>
-                <div class="stats">
-                    <div class="stat-item">
-                        <div class="stat-number">95%</div>
-                        <div class="stat-label">Balance Success Rate</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">45°</div>
-                        <div class="stat-label">Max Steering Angle</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">2.5m/s</div>
-                        <div class="stat-label">Top Speed Achieved</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">12</div>
-                        <div class="stat-label">DOF Control</div>
-                    </div>
+            <h2>Performance Results</h2>
+            <div class="stats">
+                <div class="stat-item">
+                <div class="stat-number">45°</div>
+                <div class="stat-label">Max Steering Angle</div>
                 </div>
-
-                <h3 style="text-align: center; margin-top: 3rem; margin-bottom: 2rem;">Technical Stack</h3>
-                <div class="tech-stack">
-                    <span class="tech-item">Python</span>
-                    <span class="tech-item">PyTorch</span>
-                    <span class="tech-item">MuJoCo</span>
-                    <span class="tech-item">OpenAI Gym</span>
-                    <span class="tech-item">ROS</span>
-                    <span class="tech-item">Reinforcement Learning</span>
-                    <span class="tech-item">Control Theory</span>
-                    <span class="tech-item">Computer Vision</span>
+                <div class="stat-item">
+                <div class="stat-number">2.5m/s</div>
+                <div class="stat-label">Top Speed Achieved</div>
+                </div>
+                <div class="stat-item">
+                <div class="stat-number">0.12m/s</div>
+                <div class="stat-label">Tracking Error</div>
                 </div>
             </div>
+            <div style="margin-top: 3rem; text-align: center;"></div>
+                <img src="demo/torque_over_time.png" alt="Torque Over Time" style="max-width: 600px; width: 100%; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <p style="margin-top: 1rem; color: #667eea;">Joint torque profile during skateboarding maneuver</p>
+            </div>
+            </div>
         </section>
-
         <section class="section">
             <div class="container">
                 <h2>Key Contributions</h2>
@@ -438,10 +418,6 @@
                     <div class="card">
                         <h3>📊 Novel Control Framework</h3>
                         <p>First comprehensive approach to quadrupedal robot skateboarding with hierarchical control combining MPC trajectory planning and joint-space torque control.</p>
-                    </div>
-                    <div class="card">
-                        <h3>🎓 Learning Methodology</h3>
-                        <p>Progressive curriculum learning approach that systematically teaches complex skateboarding maneuvers from basic balance to advanced tricks.</p>
                     </div>
                     <div class="card">
                         <h3>🔬 Scientific Validation</h3>
@@ -476,16 +452,16 @@
                         <h4>Xuan Nguyen</h4>
                         <p><a href="mailto:xuan.nguyen@skoltech.ru">xuan.nguyen@skoltech.ru</a></p>
                     </div>
-                    <div class="author-card">
+                    <div class="author-card" style="grid-column: 1 / -1; margin: 0 auto; max-width: 300px;"></div>
                         <h4>Pavel Osinenko</h4>
                         <p><a href="mailto:p.osinenko@skoltech.ru">p.osinenko@skoltech.ru</a></p>
                         <small>Corresponding Author</small>
                     </div>
                 </div>
-                <div class="acknowledgment">
+                <!-- <div class="acknowledgment">
                     <h3>Acknowledgments</h3>
                     <p>This work was not supported by any organization.</p>
-                </div>
+                </div> -->
             </div>
         </section>
     </main>
@@ -496,9 +472,9 @@
             <p>Interested in collaborating or learning more about our research?</p>
             <div class="social-links">
                 <a href="https://github.com/thexuanphuc/quadrupedal-skateboarding">📁 GitHub</a>
-                <a href="mailto:p.osinenko@skoltech.ru">📧 Email</a>
-                <a href="https://arxiv.org/abs/paper-id">📄 Paper</a>
-                <a href="https://www.youtube.com/watch?v=demo">🎥 YouTube</a>
+                <a href="mailto:danil.belov@skoltech.ru">📧 Email</a>
+                <!-- <a href="https://arxiv.org/abs/paper-id">📄 Paper</a>
+                <a href="https://www.youtube.com/watch?v=demo">🎥 YouTube</a> -->
             </div>
             <p style="margin-top: 2rem; opacity: 0.7;">© 2025 AIDA Research Group, Skoltech. All rights reserved.</p>
         </div>
