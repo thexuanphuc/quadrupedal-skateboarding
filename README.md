@@ -12,7 +12,6 @@ Quadrupedal robots excel at terrestrial locomotion, but dynamic balance on rolli
 
 - **Dynamic Balance Control**: Novel algorithms for stability on moving skateboard platforms using ZMP and CoP feedback.
 - **Multi-Modal Locomotion**: Seamless transition between walking and skateboarding modes.
-- **Reinforcement Learning Framework**: End-to-end learning for complex maneuvers using domain randomization and curriculum learning.
 - **Real-World Validation**: Successful deployment on physical quadrupedal robot hardware with high sim-to-real performance retention.
 - **Theoretical Analysis**: Stability analysis of the coupled robot-skateboard system.
 
@@ -23,24 +22,21 @@ We use a hierarchical control system combining high-level planning, whole-body c
 ## Demonstrations
 
 ### Basic Skateboarding
-![Front View](src/demo/matplotlib_front.gif)
+![Front View](docs/demo/matplotlib_front.gif)
 *Front view demonstration of basic skateboarding locomotion*
 
-![Isometric View](src/demo/matplotlib_iso.gif)
+![Isometric View](docs/demo/matplotlib_iso.gif)
 *Isometric view showing full body dynamics during skateboarding*
 
 ### Advanced Maneuvers
-![Mounting](src/demo/mounting.gif)
-*Autonomous mounting behavior from standing position*
-
-![Turning](src/demo/turning.gif)
+![Turning](docs/demo/turning.gif)
 *Dynamic turning maneuvers with balance control*
 
 ### Real Robot Performance
-![Real Front View](src/demo/real_front.gif)
+![Real Front View](docs/demo/real_front.gif)
 *Real robot performance - front view*
 
-![Real Isometric View](src/demo/real_iso.gif)
+![Real Isometric View](docs/demo/real_iso.gif)
 *Real robot performance - isometric view*
 
 ## Citation
